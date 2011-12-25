@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'dolittle'
+
+begin
+  if ARGV.length == 0
+    Dolittle.send :usage
+  elsif ARGV.length == 1
+    Dolittle.send ARGV[0].intern
+  else
+    Dolittle.send ARGV[0].intern, ARGV[1..-1]
+  end
+rescue NoMethodError
+  $stderr.puts "Ops! Dolittle does not have the method(#{ARGV[0]})!"
+  puts ""
+  Dolittle.send :usage
+end

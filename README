@@ -1,0 +1,4 @@
+prompt> cd dolittle_jr
+prompt> export RUBYLIB=`pwd`/lib
+
+promt> bin/dbm sample hoge1 hoge2
